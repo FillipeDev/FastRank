@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/valdi/Desktop/spigot.jar"/>
+	<classpathentry kind="lib" path="C:/Users/valdi/Desktop/Vault.jar"/>
+	<classpathentry kind="lib" path="C:/Users/valdi/Desktop/LegendChat.jar"/>
+	<classpathentry kind="lib" path="C:/Users/valdi/Desktop/UltimateChat-1.8.9-b235-Universal.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,16 @@
+name: FastRankup
+version: 1.2.3
+main: me.felipe.fastrankup.Main
+author: FillipeDev
+depend: [Vault]
+softdepend: [UltimateChat, Legendchat]
+commands:
+  rankup:
+    description: Upa o seu rank
+  fastrankup:
+    description: Administra o sistema de ranks
+permissions:
+  uranking.rankup:
+    default: false    
+  uranking.hidetag:
+    default: false
