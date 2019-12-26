@@ -1,11 +1,6 @@
 package me.felipe.fastrankup;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,9 +11,6 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import me.felipe.fastrankup.comandos.Admin;
 import me.felipe.fastrankup.comandos.Rankup;
@@ -89,7 +81,6 @@ public class Main extends JavaPlugin {
 			
 		}
 			
-		checkVersion(PLUGIN_VERSION);
 		
 		if(getConfig().getBoolean("Rankup-GUI.Usar")) {
 			
@@ -206,36 +197,4 @@ public class Main extends JavaPlugin {
         economy = rsp.getProvider();
         return economy != null;
     }
-	
-	private void checkVersion(String version) {
-				
-		try {
-			
-			URL url = new URL("https://api.github.com/repos/BrunnoFdc/uRanking/releases/latest");
-			BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
-			JsonObject json = new JsonParser().parse(in.readLine()).getAsJsonObject();
-			String github = json.get("tag_name").getAsString();
-			
-			if(!PLUGIN_VERSION.equals(github)) {
-				
-				Bukkit.getConsoleSender().sendMessage(PLUGIN_PREFIX + "Há um novo update disponível do plugin! Baixe em: http://bit.ly/uRankingDownload");
-				Bukkit.getConsoleSender().sendMessage(PLUGIN_PREFIX + "Não esqueça de verificar se existem atualizações na config.yml ;-)");
-
-			}
-				
-		} catch (MalformedURLException e) {
-			
-			Bukkit.getConsoleSender().sendMessage(PLUGIN_ERROR_PREFIX + "Não foi possível verificar se o plugin possui atualizações. Por favor, cheque manualmente!");
-			e.printStackTrace();
-			
-		} catch (IOException e) {
-			
-			Bukkit.getConsoleSender().sendMessage(PLUGIN_ERROR_PREFIX + "Não foi possível verificar se o plugin possui atualizações. Por favor, cheque manualmente!");
-
-		}
-		
-		
-		
-	}
-	
 }
